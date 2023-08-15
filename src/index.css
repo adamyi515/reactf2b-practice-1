@@ -8,13 +8,73 @@ body {
   background-color: #202142;
 }
 
+/****************************************************************************************************************************/
+/***** Reusable classes section *****/
+.container {
+  margin: auto;
+  width: 50%;
+}
+
+.card {
+  border-radius: 15px;
+  background-color: #fff;
+  color: #333;
+  padding: 40px 50px;
+  margin: 20px 0;
+  position: relative;
+}
 
 /****************************************************************************************************************************/
 /***** Header section *****/
 header {
   height: 70px;
+  margin-bottom: 30px;
+
 
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/****************************************************************************************************************************/
+/***** FeedbackStats section *****/
+.feedback-stats {
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  margin: 30px 0;
+}
+
+
+
+/****************************************************************************************************************************/
+/***** FeedbackList section *****/
+
+
+
+/****************************************************************************************************************************/
+/***** FeedbackItem section *****/
+.feedback-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feedback-item__buttons {
+  display: flex;
+  gap: 10px;
+}
+
+
+.feedback-item__rating {
+  position: absolute;
+  border: 1px solid white;
+  border-radius: 100%;
+  padding: 15px;
+
+  background-color: #ff6a95;
+  color: #fff;
+
+
+  left: -10px;
+  top: -20px;
 }
