@@ -1,12 +1,12 @@
 import React from 'react'
 import Card from './shared/Card'
 
-const FeedbackItem = () => {
+const FeedbackItem = ({ item }) => {
   return (
     <Card>
         <div className='feedback-item'>
-            <p>This is feedback number 1</p>
-            <div className='feedback-item__rating'>10</div>
+            <p>{ item.text }</p>
+            <div className='feedback-item__rating'>{ item.rating }</div>
             <div className='feedback-item__buttons'>
                 <button>Edit</button>
                 <button>X</button>
