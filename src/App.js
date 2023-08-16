@@ -7,12 +7,6 @@ import FeedbackForm from './components/FeedbackForm';
 import FeedbackProvider from './context/FeedbackContext';
 
 function App() {
-
-  
-
-  
-
-
   return (
     <FeedbackProvider>
       <>

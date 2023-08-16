@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import Card from './shared/Card'
 import FeedbackRating from './FeedbackRating';
 import { FeedbackContext } from '../context/FeedbackContext';
@@ -6,7 +6,14 @@ import { FeedbackContext } from '../context/FeedbackContext';
 const FeedbackForm = () => {
     const [text, setText] = useState('');
     const [selectedRating, setSelectedRating] = useState(10);
-    const { onAddFeedbackItem } = useContext(FeedbackContext);
+    const { onAddFeedbackItem, editFeedbackItem, onUpdateFeedbackItem } = useContext(FeedbackContext);
+
+    useEffect(() => {
+        if(editFeedbackItem.isEditing){
+            setText(editFeedbackItem.item.text);
+            setSelectedRating(editFeedbackItem.item.rating);
+        }
+    }, [editFeedbackItem])
 
 
     // Functions ////////////////////////////////////////////////////////////////
@@ -19,7 +26,15 @@ const FeedbackForm = () => {
                 rating: selectedRating
             }
 
-            onAddFeedbackItem(newItem);
+            if(editFeedbackItem.isEditing) {
+                onUpdateFeedbackItem(editFeedbackItem.item.id, newItem)
+            } else {
+                onAddFeedbackItem(newItem);
+            }
+
+
+        } else {
+            window.alert('Text must be at least 10 characters.');
         }
     }
 
