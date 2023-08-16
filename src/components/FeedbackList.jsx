@@ -1,7 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useContext } from 'react'
 import FeedbackItem from './FeedbackItem'
+import { FeedbackContext } from '../context/FeedbackContext'
 
-const FeedbackList = ({ feedbackData, onDeleteFeedbackItem }) => {
+const FeedbackList = () => {
+    const { feedbackData } = useContext(FeedbackContext);
 
     return (
         <div className='feedback-list'>
@@ -10,9 +12,7 @@ const FeedbackList = ({ feedbackData, onDeleteFeedbackItem }) => {
                     {feedbackData.map(item => {
                         return(
                             <>
-                                <FeedbackItem 
-                                    onDeleteFeedbackItem={onDeleteFeedbackItem} 
-                                    item={item} key={item.id} />
+                                <FeedbackItem item={item} key={item.id} />
                             </>
                         )
                     })}

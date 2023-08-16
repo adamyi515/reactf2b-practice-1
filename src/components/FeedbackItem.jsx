@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Card from './shared/Card'
+import { FeedbackContext } from '../context/FeedbackContext'
 
-const FeedbackItem = ({ item, onDeleteFeedbackItem }) => {
+const FeedbackItem = ({ item }) => {
+    const { onDeleteFeedbackItem } = useContext(FeedbackContext)
 
     const handleDeleteFeedbackItem = () => {
         onDeleteFeedbackItem(item.id)

@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Card from './shared/Card'
 import FeedbackRating from './FeedbackRating';
+import { FeedbackContext } from '../context/FeedbackContext';
 
-const FeedbackForm = ({ onAddFeedbackItem }) => {
+const FeedbackForm = () => {
     const [text, setText] = useState('');
     const [selectedRating, setSelectedRating] = useState(10);
+    const { onAddFeedbackItem } = useContext(FeedbackContext);
 
 
     // Functions ////////////////////////////////////////////////////////////////
