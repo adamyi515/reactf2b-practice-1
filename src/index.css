@@ -53,6 +53,18 @@ form h2 {
   margin-bottom: 40px;
 }
 
+
+/****************************************************************************************************************************/
+/***** FeedbackRating section *****/
+.feedback-rating {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+
 /****************************************************************************************************************************/
 /***** FeedbackStats section *****/
 .feedback-stats {

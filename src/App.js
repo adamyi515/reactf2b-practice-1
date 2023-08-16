@@ -19,16 +19,24 @@ function App() {
     const data = await response.json();
 
     setFeedbackData(data);
-
   }
+
+  const addFeedbackItem = (newItem) => {
+    console.log(newItem);
+  }
+
+  const deleteFeedbackItem = (id) => {
+    console.log(id);
+  }
+
 
   return (
     <div>
       <Header />
       <div className='container'>
-        <FeedbackForm />
+        <FeedbackForm onAddFeedbackItem={addFeedbackItem} />
         <FeedbackStats feedbackData={feedbackData} />
-        <FeedbackList feedbackData={feedbackData} />
+        <FeedbackList feedbackData={feedbackData} onDeleteFeedbackItem={deleteFeedbackItem} />
       </div>
     </div>
   );

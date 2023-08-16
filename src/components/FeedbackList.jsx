@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import FeedbackItem from './FeedbackItem'
 
-const FeedbackList = ({ feedbackData }) => {
+const FeedbackList = ({ feedbackData, onDeleteFeedbackItem }) => {
 
     return (
         <div className='feedback-list'>
@@ -10,7 +10,9 @@ const FeedbackList = ({ feedbackData }) => {
                     {feedbackData.map(item => {
                         return(
                             <>
-                                <FeedbackItem item={item} key={item.id} />
+                                <FeedbackItem 
+                                    onDeleteFeedbackItem={onDeleteFeedbackItem} 
+                                    item={item} key={item.id} />
                             </>
                         )
                     })}
